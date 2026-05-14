@@ -1,0 +1,108 @@
+/* ============================================================
+   Pill — Component
+   All values reference semantic tokens directly (no --cds-* prefix).
+
+   States:   unselected (default) | selected | selected-high
+   Emphasis: default (via PillGroup) → selected / selected-high
+   Height:   48px fixed
+   Radius:   --radius-medium (12px)
+   Padding:  --space-small --space-large (8px 16px)
+   Gap:      --space-small (8px)
+
+   No hardcoded colours or type ramps.
+   ============================================================ */
+
+/* ── Base pill ───────────────────────────────────────────── */
+.pill {
+  display:           inline-flex;
+  flex-direction:    row;
+  align-items:       center;
+  justify-content:   center;
+  gap:               var(--space-small);
+  height:            48px;
+  padding:           var(--space-small) var(--space-large);
+  border-radius:     var(--radius-medium);
+  /* Always reserve border space so layout doesn't shift on selection */
+  border:            var(--border-width-thick) solid transparent;
+  box-sizing:        border-box;
+  white-space:       nowrap;
+  cursor:            pointer;
+  user-select:       none;
+  outline:           none;
+  -webkit-tap-highlight-color: transparent;
+  transition:        background 150ms ease,
+                     border-color 150ms ease,
+                     color 150ms ease;
+
+  /* Typography */
+  font-family:    var(--platform-font-default);
+  font-size:      var(--text-size-5);    /* 15 px */
+  font-weight:    600;
+  line-height:    20px;
+  letter-spacing: -0.006em;
+}
+
+/* Focus ring */
+.pill:focus-visible {
+  outline:        3px solid var(--border-info);
+  outline-offset: 2px;
+}
+
+/* ── State: unselected ───────────────────────────────────── */
+.unselected {
+  background:   var(--background-neutral-subtle);
+  border-color: transparent;
+  color:        var(--text-neutral-bold);
+}
+
+.unselected:hover:not(.disabled) {
+  background: var(--background-primary-subtle);
+}
+
+/* ── State: selected (default emphasis) ─────────────────── */
+.selected {
+  background:   var(--background-primary-subtle);
+  border-color: var(--border-primary);
+  color:        var(--text-primary);
+}
+
+.selected:hover:not(.disabled) {
+  border-color: var(--border-primary-bold);
+}
+
+/* ── State: selected-high (high emphasis) ───────────────── */
+.selectedHigh {
+  background:   var(--background-primary);
+  border-color: transparent;
+  color:        var(--background-primary-inverse);
+}
+
+.selectedHigh:hover:not(.disabled) {
+  background: var(--background-primary-bold);
+}
+
+/* ── State: disabled ────────────────────────────────────── */
+.disabled {
+  background:   var(--background-disabled);
+  border-color: transparent;
+  color:        var(--text-disabled);
+  cursor:       not-allowed;
+}
+
+/* ── Icon slot ──────────────────────────────────────────── */
+.iconSlot {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width:       var(--icon-size-medium);
+  height:      var(--icon-size-medium);
+  color:       inherit;
+}
+
+/* ── Group ──────────────────────────────────────────────── */
+.group {
+  display:        flex;
+  flex-direction: row;
+  flex-wrap:      wrap;
+  gap:            var(--space-medium);
+}

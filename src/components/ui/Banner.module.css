@@ -1,0 +1,140 @@
+/* ============================================================
+   Banner — Component
+   All values reference semantic tokens directly (no --cds-* prefix).
+
+   Sentiments: info | success | warning | error | neutral
+   Features:   title, message, action link, dismiss button
+   Layout:     uniform thin perimeter border
+
+   No hardcoded colours, sizes, or type ramps.
+   ============================================================ */
+
+/* ── Root ─────────────────────────────────────────────────── */
+.banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-medium);
+  padding: var(--space-large);
+  border-radius: var(--radius-large);
+  border: var(--border-width-thick) solid;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Sentiments — background + border colour ──────────────── */
+.info    { background: var(--background-info-subtle);    border-color: var(--border-info);    }
+.success { background: var(--background-success-subtle); border-color: var(--border-success); }
+.warning { background: var(--background-alert-subtle);   border-color: var(--border-alert);   }
+.error   { background: var(--background-error-subtle);   border-color: var(--border-error);   }
+.neutral { background: var(--background-primary-inverse); border-color: var(--border-primary); }
+
+/* ── Icon ─────────────────────────────────────────────────── */
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.info    .icon { color: var(--text-info);    }
+.success .icon { color: var(--text-success); }
+.warning .icon { color: var(--text-alert);   }
+.error   .icon { color: var(--text-error);   }
+.neutral .icon { color: var(--text-primary); }
+
+/* ── Content ──────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-family:    var(--platform-font-default);
+  font-size:      var(--text-size-5);          /* 15 px */
+  font-weight:    600;
+  line-height:    var(--line-height-4);         /* 20 px */
+  letter-spacing: var(--letter-space-tight);   /* -0.4 px */
+  color: var(--text-neutral-bolder);
+  margin: 0 0 var(--space-xsmall) 0;
+}
+
+/* ── Title row (icon + heading) ───────────────────────────── */
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-small);
+  margin-bottom: var(--space-xsmall);
+}
+
+/* Remove the bottom margin from .title when it's inside .titleRow */
+.titleRow .title {
+  margin: 0;
+}
+
+.titleIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--icon-size-small);
+  height: var(--icon-size-small);
+  color: var(--text-neutral-bolder);
+}
+
+.message {
+  font-family:    var(--platform-font-default);
+  font-size:      var(--text-size-3);          /* 13 px */
+  font-weight:    400;
+  line-height:    var(--line-height-3);         /* 18 px */
+  letter-spacing: var(--letter-space-tight);
+  color: var(--text-neutral);
+  margin: 0;
+}
+
+/* ── Action link ──────────────────────────────────────────── */
+.action {
+  display: inline-block;
+  margin-top: var(--space-small);
+  font-family:    var(--platform-font-default);
+  font-size:      var(--text-size-3);          /* 13 px */
+  font-weight:    700;
+  line-height:    var(--line-height-3);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.info    .action { color: var(--text-info);    }
+.success .action { color: var(--text-success); }
+.warning .action { color: var(--text-alert);   }
+.error   .action { color: var(--text-error);   }
+.neutral .action { color: var(--text-primary); }
+
+.action:hover {
+  opacity: var(--opacity-semiSolid);
+}
+
+/* ── Dismiss button ───────────────────────────────────────── */
+.dismiss {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-xsmall);
+  cursor: pointer;
+  color: var(--text-neutral);
+  padding: 0;
+  margin: -2px -2px 0 0;
+  transition: background 0.1s;
+}
+
+.dismiss:hover {
+  background: var(--background-disabled-bold);
+}

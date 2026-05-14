@@ -1,0 +1,152 @@
+/*
+  Checkbox — CDS component tokens
+  ─────────────────────────────────────────────────────────────
+  All values reference repo CSS custom properties directly.
+
+  State → token mapping:
+  Unchecked, enabled      border:  --background-primary
+  Checked, enabled        fill:    --background-primary
+                          icon:    --color-base-white
+  Indeterminate, enabled  fill:    --background-primary
+                          icon:    --color-base-white
+  Hover (unchecked)       border:  --border-primary
+  Hover (checked/indet.)  fill:    --border-primary
+  Unchecked, disabled     border:  --border-neutral
+  Checked, disabled       fill:    --background-disabled-bold
+  Indeterminate, disabled fill:    --background-disabled-bold
+
+  Layout tokens:
+    border-radius:  --radius-small   (4 px)
+    border-width:   --border-width-thick
+    gap:            --space-small    (8 px)
+    label:          --text-size-4 / weight 700
+*/
+
+/* ── Wrapper (label element) ───────────────────────────────── */
+.root {
+  display:     inline-flex;
+  align-items: center;
+  gap:         var(--space-small); /* 8 px */
+  cursor:      pointer;
+  position:    relative;
+  user-select: none;
+}
+
+.root.disabled {
+  cursor: not-allowed;
+}
+
+/* ── Hidden native input ───────────────────────────────────── */
+.input {
+  position:       absolute;
+  opacity:        0;
+  width:          0;
+  height:         0;
+  margin:         0;
+  pointer-events: none;
+}
+
+/* ── Custom visual control ─────────────────────────────────── */
+.control {
+  flex-shrink:     0;
+  border-radius:   var(--radius-small);
+  border:          var(--border-width-thick) solid var(--background-primary);
+  background:      transparent;
+  position:        relative;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  transition:      background 140ms ease, border-color 140ms ease;
+  overflow:        hidden;
+}
+
+/* ── Icon slots ────────────────────────────────────────────── */
+.iconCheck,
+.iconMinus {
+  position:        absolute;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  color:           var(--color-base-white);
+  opacity:         0;
+  transform:       scale(0.6);
+  transition:      opacity 140ms ease, transform 140ms ease;
+}
+
+/* ── Sizes ─────────────────────────────────────────────────── */
+
+/* Medium — 28 px control (matches Figma spec) */
+.medium .control {
+  width:  28px;
+  height: 28px;
+}
+
+/* Small — 20 px control */
+.small .control {
+  width:  20px;
+  height: 20px;
+}
+
+/* ── Checked state ─────────────────────────────────────────── */
+.input:checked + .control {
+  background:   var(--background-primary);
+  border-color: var(--background-primary);
+}
+
+.input:checked + .control .iconCheck {
+  opacity:   1;
+  transform: scale(1);
+}
+
+/* ── Indeterminate state ───────────────────────────────────── */
+.input:indeterminate + .control {
+  background:   var(--background-primary);
+  border-color: var(--background-primary);
+}
+
+.input:indeterminate + .control .iconMinus {
+  opacity:   1;
+  transform: scale(1);
+}
+
+/* ── Hover (enabled only) ──────────────────────────────────── */
+.root:not(.disabled):hover .input:not(:checked):not(:indeterminate) + .control {
+  border-color: var(--border-primary);
+}
+
+.root:not(.disabled):hover .input:checked + .control,
+.root:not(.disabled):hover .input:indeterminate + .control {
+  background:   var(--border-primary);
+  border-color: var(--border-primary);
+}
+
+/* ── Disabled — unchecked ──────────────────────────────────── */
+.disabled .control {
+  border-color: var(--border-neutral);
+}
+
+/* ── Disabled — checked / indeterminate ────────────────────── */
+.disabled .input:checked + .control,
+.disabled .input:indeterminate + .control {
+  background:   var(--background-disabled-bold);
+  border-color: var(--background-disabled-bold);
+}
+
+/* ── Focus ring (keyboard navigation) ──────────────────────── */
+.input:focus-visible + .control {
+  outline:        3px solid var(--border-info);
+  outline-offset: 2px;
+}
+
+/* ── Label text ────────────────────────────────────────────── */
+.label {
+  font-size:   var(--text-size-4);     /* 14 px */
+  font-weight: 700;
+  line-height: var(--line-height-2);   /* 16 px */
+  color:       var(--text-neutral);
+  transition:  color 140ms ease;
+}
+
+.disabled .label {
+  color: var(--text-disabled);
+}
