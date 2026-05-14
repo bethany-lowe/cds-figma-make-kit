@@ -1,0 +1,62 @@
+/*
+  FeedbackCaption — CDS component tokens
+  ─────────────────────────────────────────────────────────────
+  Variant → token mapping:
+
+  info    icon:  --icon-primary          (primary purple)
+          text:  --text-neutral-bold     (neutral dark / black)
+          icon:  actionInfo/Solid
+
+  success icon:  --icon-success          (success green)
+          text:  --text-success-bold     (success dark green  #005700)
+          icon:  abstractSuccess/Solid
+
+  error   icon:  --icon-error            (error red)
+          text:  --text-error            (error pure red      #d80b25)
+          icon:  abstractWarning/Solid
+
+  Layout tokens:
+    gap:        --space-xsmall           (4 px)
+    icon size:  --icon-size-small        (16 px)
+    font-size:  --text-size-2            (12 px)
+    line-height:--line-height-2          (16 px)
+*/
+
+/* ── Wrapper ───────────────────────────────────────────────── */
+.root {
+  display:     inline-flex;
+  align-items: flex-start;
+  gap:         var(--space-xsmall, 4px);
+}
+
+/* ── Icon slot ─────────────────────────────────────────────── */
+.icon {
+  flex-shrink:     0;
+  width:           var(--icon-size-small, 16px);
+  height:          var(--icon-size-small, 16px);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  /* Nudge icon to sit on the text cap-height baseline */
+  margin-top:      1px;
+}
+
+/* ── Caption text ──────────────────────────────────────────── */
+.text {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-2, 12px);
+  font-weight:  400;
+  line-height:  var(--line-height-2, 16px);
+}
+
+/* ── Variant: info ─────────────────────────────────────────── */
+.info .icon { color: var(--icon-primary); }
+.info .text { color: var(--text-neutral-bold); }
+
+/* ── Variant: success ──────────────────────────────────────── */
+.success .icon { color: var(--icon-success); }
+.success .text { color: var(--text-success-bold); }
+
+/* ── Variant: error ────────────────────────────────────────── */
+.error .icon { color: var(--icon-error); }
+.error .text { color: var(--text-error); }

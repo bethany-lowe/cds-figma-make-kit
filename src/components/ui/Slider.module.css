@@ -1,0 +1,211 @@
+/* ============================================================
+   Slider — CDS Component
+   All values reference semantic tokens directly (no --cds-* prefix).
+
+   Token translation:
+     --background-*         → background colours
+     --border-*             → border colours & widths
+     --radius-*             → border radii
+     --text-*               → text colours
+     --opacity-*            → opacity scale
+     --space-*              → spacing
+     --text-size-*          → font sizes
+     --line-height-*        → line heights
+     --platform-font-default → web font stack
+
+   Sizes:     small (32 px) | medium (40 px) | large (48 px)
+   States:    default, hover, active, disabled, loading, error
+   Modes:     single knob | range (dual-knob)
+   Focus:     inset ring using --background-primary-bold
+   ============================================================ */
+
+/* ── Root ─────────────────────────────────────────────────── */
+.slider {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-xsmall);          /* 4 px */
+  font-family:    var(--platform-font-default);
+  width:          100%;
+}
+
+/* ── States ───────────────────────────────────────────────── */
+.disabled {
+  opacity:        var(--opacity-medium);         /* 0.6 */
+  pointer-events: none;
+}
+
+.loading {
+  pointer-events: none;
+}
+
+/* ── Header: label + value ────────────────────────────────── */
+.header {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     center;
+  gap:             var(--space-small);           /* 8 px */
+}
+
+.label {
+  font-size:   var(--text-size-3);              /* 13 px */
+  font-weight: 700;
+  line-height: var(--line-height-3);
+  color:       var(--text-neutral-bolder);       /* #000 */
+  cursor:      default;
+}
+
+.value {
+  font-size:            var(--text-size-2);      /* 12 px */
+  font-weight:          400;
+  line-height:          var(--line-height-2);
+  color:                var(--text-neutral);
+  font-variant-numeric: tabular-nums;
+  white-space:          nowrap;
+}
+
+/* ── Track — pill-shaped container ───────────────────────── */
+.track {
+  position:      relative;
+  border-radius: var(--radius-medium);           /* 12 px */
+  background:    var(--background-app);          /* white */
+  border:        var(--border-width-thin) solid var(--border-neutral);
+  overflow:      hidden;
+  cursor:        pointer;
+  user-select:   none;
+  -webkit-user-select: none;
+}
+
+/* Track heights — knob fills the full track height */
+.small  .track { height: 32px; }
+.medium .track { height: 40px; }
+.large  .track { height: 48px; }
+
+/* ── Fill ─────────────────────────────────────────────────── */
+.fill {
+  position:       absolute;
+  top:            0;
+  left:           0;
+  bottom:         0;
+  background:     var(--background-primary);     /* brand purple */
+  pointer-events: none;
+}
+
+/* Range fill uses left + right from inline style instead of width */
+.fillRange {
+  right: auto; /* overridden by inline style */
+}
+
+.error .fill {
+  background: var(--background-error);           /* error red */
+}
+
+/* ── Knob — slides inside the track ──────────────────────── */
+.knob {
+  position:        absolute;
+  top:             0;
+  bottom:          0;
+  background:      var(--background-primary);
+  color:           rgba(255, 255, 255, 0.7);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  cursor:          grab;
+  outline:         none;
+  z-index:         2;
+  transition:      background 0.12s ease;
+}
+
+/* Knob widths match track heights — square knob */
+.small  .knob { width: 32px; }
+.medium .knob { width: 40px; }
+.large  .knob { width: 48px; }
+
+/* Inactive: knob is at minimum — lighter brand colour */
+.knobInactive {
+  background: var(--border-primary);
+}
+
+/* Hover */
+.slider:not(.disabled):not(.loading) .knob:hover {
+  background: var(--background-primary-bold);
+}
+
+/* Active / drag */
+.slider:not(.disabled) .knob:active {
+  cursor:     grabbing;
+  background: var(--background-primary-bold);
+}
+
+/* Keyboard focus ring — inset so it stays within the track bounds */
+.knob:focus-visible {
+  box-shadow:
+    inset 0 0 0 2px var(--background-app),
+    inset 0 0 0 4px var(--background-primary-bold);
+}
+
+/* Error knob */
+.error .knob {
+  background: var(--background-error);
+}
+
+.error .knobInactive {
+  background: var(--border-error);
+  opacity:    var(--opacity-medium);
+}
+
+.error:not(.disabled) .knob:hover,
+.error:not(.disabled) .knob:active {
+  background: var(--background-error);
+  filter:     brightness(0.85);
+}
+
+.error .knob:focus-visible {
+  box-shadow:
+    inset 0 0 0 2px var(--background-app),
+    inset 0 0 0 4px var(--border-error);
+}
+
+/* Icon inside knob — pointer-events off so drag works */
+.knob > * {
+  pointer-events: none;
+}
+
+/* ── Step markers ─────────────────────────────────────────── */
+.step {
+  position:        absolute;
+  top:             50%;
+  transform:       translate(-50%, -50%);
+  z-index:         1;
+  pointer-events:  none;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+.stepDot {
+  display:       block;
+  border-radius: var(--radius-full);
+  background:    rgba(255, 255, 255, 0.45);
+}
+
+.small  .stepDot { width: 4px; height: 4px; }
+.medium .stepDot { width: 5px; height: 5px; }
+.large  .stepDot { width: 6px; height: 6px; }
+
+/* Step dots in the unfilled area */
+.track > .step {
+  color: var(--text-neutral);
+}
+
+/* ── Helper text ──────────────────────────────────────────── */
+.helper {
+  margin:      0;
+  font-size:   var(--text-size-2);              /* 12 px */
+  font-weight: 400;
+  line-height: var(--line-height-2);
+  color:       var(--text-neutral);
+}
+
+.error .helper {
+  color: var(--text-error);
+}

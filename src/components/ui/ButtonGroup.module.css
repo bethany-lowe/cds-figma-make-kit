@@ -1,0 +1,68 @@
+/* ============================================================
+   ButtonGroup — CDS Component
+   Source of truth: ✅ Button Group [BETA] — Figma node 2196:36106
+
+   Groups multiple buttons into cohesive layouts. Three variants:
+   - stacked    — vertical stack, 12px gap (primary + secondary pairs)
+   - horizontal — horizontal row, 24px gap (side-by-side actions)
+   - iconGrid   — icon buttons with labels, 4px gap (toolbars)
+
+   All spacing uses repo CSS custom properties:
+     --space-*  spacing primitives (base.css)
+
+   No hardcoded spacing values.
+   ============================================================ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+.buttonGroup {
+  display: flex;
+  align-items: center;
+}
+
+/* ── Stacked variant ──────────────────────────────────────── */
+.stacked {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-medium);  /* 12px — vertical spacing between buttons */
+}
+
+/* ── Horizontal variant ───────────────────────────────────── */
+.horizontal {
+  flex-direction: row;
+  gap: var(--space-xlarge);  /* 24px — horizontal spacing between buttons */
+}
+
+/* ── Icon grid variant ────────────────────────────────────── */
+.iconGrid {
+  flex-direction: row;
+  gap: var(--space-xsmall);  /* 4px — tight spacing for icon button grid */
+  justify-content: center;
+}
+
+/* ── Icon grid item ───────────────────────────────────────── */
+.iconGridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-small);  /* 8px — gap between icon button and label */
+  padding: var(--space-medium) var(--space-xlarge);  /* 12px 24px */
+  border-radius: var(--radius-medium);  /* 12px */
+}
+
+.iconGridButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-8);   /* 48px — matches small button size */
+  min-height: var(--size-8);
+}
+
+.iconGridLabel {
+  font-family: var(--platform-font-default);
+  font-size: var(--text-size-2);      /* 11px */
+  font-weight: 600;                   /* semibold — matches Figma 590 */
+  line-height: var(--line-height-1);  /* 13px */
+  color: var(--text-secondary);
+  text-align: center;
+  white-space: nowrap;
+}

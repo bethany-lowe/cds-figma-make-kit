@@ -1,0 +1,160 @@
+/*
+  AiAssistantButton — CDS Component
+  ─────────────────────────────────────────────────────────────
+  Gradient palette (AiAssistant-1):
+    Background  #FFD4F7 (rose) → #ADEDFF (sky blue)
+    Waves       #7A0BD2 / #6E0BD2 / #3F0BD2 (purple family)
+    Glow        violet  rgba(120, 80, 240, …)
+
+  Sizes:   default (60px) · large (84px)
+  States:  default · listening · disabled
+*/
+
+/* ── Button base ─────────────────────────────────────────── */
+.button {
+  position:        relative;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  border:          none;
+  background:      transparent;
+  padding:         0;
+  cursor:          pointer;
+  border-radius:   var(--radius-full);
+  outline:         none;
+  flex-shrink:     0;
+  transition:      transform 150ms ease, opacity 150ms ease, filter 300ms ease;
+  -webkit-tap-highlight-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(120, 80, 240, 0.30));
+}
+
+/* ── Focus ring ──────────────────────────────────────────── */
+.button:focus-visible {
+  outline:        4px solid var(--border-info);
+  outline-offset: 3px;
+}
+
+/* ── Press feedback ──────────────────────────────────────── */
+.button:active:not(.stateDisabled) {
+  transform: scale(0.94);
+}
+
+/* ── Sizes ───────────────────────────────────────────────── */
+.sizeDefault {
+  width:  60px;
+  height: 60px;
+}
+
+.sizeLarge {
+  width:  84px;
+  height: 84px;
+}
+
+/* ── Disabled ────────────────────────────────────────────── */
+.stateDisabled {
+  opacity:        0.4;
+  cursor:         not-allowed;
+  pointer-events: none;
+  filter:         none;
+}
+
+/* ── Listening — breathes + glow intensifies ────────────── */
+.stateListening {
+  animation: aiBreathe 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px rgba(120, 80, 240, 0.55));
+}
+
+/* ── Gradient background wrapper ────────────────────────── */
+.bg {
+  position:        absolute;
+  inset:           0;
+  border-radius:   var(--radius-full);
+  overflow:        hidden;
+  pointer-events:  none;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+}
+
+/* ── Pulse ring (listening state) ────────────────────────── */
+.pulseRing {
+  position:       absolute;
+  inset:          0;
+  border-radius:  var(--radius-full);
+  background:     rgba(140, 90, 255, 0.5);
+  opacity:        0;
+  animation:      aiPulse 1.8s ease-out infinite;
+  pointer-events: none;
+  z-index:        -1;
+}
+
+.pulseRing::after {
+  content:       '';
+  position:      absolute;
+  inset:         0;
+  border-radius: var(--radius-full);
+  background:    rgba(140, 90, 255, 0.4);
+  opacity:       0;
+  animation:     aiPulse 1.8s ease-out 0.6s infinite;
+}
+
+/* ── Keyframes ───────────────────────────────────────────── */
+@keyframes aiPulse {
+  0%   { transform: scale(1);   opacity: 0.5; }
+  100% { transform: scale(1.9); opacity: 0;   }
+}
+
+@keyframes aiBreathe {
+  0%, 100% { transform: scale(1);    }
+  50%       { transform: scale(1.05); }
+}
+
+/*
+  Wave animations (listening state)
+  ───────────────────────────────────────────────────────────
+  Vertical amplitude oscillation — Siri-style waveform feel.
+  Each layer rises and falls like a harmonic frequency:
+  the middle wave (B) carries the most energy (largest travel),
+  outer waves are quieter. Staggered phases create an organic
+  interference pattern — sometimes all peaks align (loud pulse),
+  sometimes they cancel (quiet moment). Silk-smooth via
+  ease-in-out + alternate with no mid-keyframe breaks.
+
+  transform-origin: center bottom  → waves grow upward from base
+  Wave A  3.8s  delay 0.0s   ±4px  (lightest, subtle)
+  Wave B  2.8s  delay 0.7s   ±9px  (middle, dominant energy)
+  Wave C  3.3s  delay 1.4s   ±6px  (darkest base)
+*/
+.waveA,
+.waveB,
+.waveC {
+  transform-box:    fill-box;
+  transform-origin: center bottom;
+}
+
+.waveA {
+  animation: aiWaveA 3.8s ease-in-out infinite alternate;
+}
+
+.waveB {
+  animation: aiWaveB 2.8s ease-in-out 0.7s infinite alternate;
+}
+
+.waveC {
+  animation: aiWaveC 3.3s ease-in-out 1.4s infinite alternate;
+}
+
+@keyframes aiWaveA {
+  from { transform: translateX(-5px) translateY( 3px); }
+  to   { transform: translateX( 5px) translateY(-3px); }
+}
+
+@keyframes aiWaveB {
+  from { transform: translateX(-8px) translateY( 0px); }
+  to   { transform: translateX( 8px) translateY(-9px); }
+}
+
+@keyframes aiWaveC {
+  from { transform: translateX(-6px) translateY(-4px); }
+  to   { transform: translateX( 6px) translateY( 5px); }
+}

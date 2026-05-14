@@ -1,0 +1,159 @@
+/*
+  Tag — CDS component tokens
+  ─────────────────────────────────────────────────────────────
+  All values reference repo CSS custom properties directly.
+  Colour slots (semantic role → repo token):
+    primary   → --color-primary-*   (switches per brand)
+    secondary → --color-secondary-* (switches per brand)
+    neutral   → --color-neutral-*   (switches per brand)
+    alert     → --background-alert-* / --text-alert-*
+    error     → --background-error-* / --text-error-*
+    success   → --background-success-* / --text-success-*
+    info      → --background-info-* / --text-info-*
+
+  Each colour class sets four local custom props consumed by the
+  variant rules, keeping variant rules colour-agnostic:
+
+    --tag-bg-solid      solid fill background
+    --tag-bg-subtle     tinted background
+    --tag-text-solid    label / icon on solid bg (always white)
+    --tag-text-subtle   label / icon on subtle bg
+    --tag-border        outline border colour
+    --tag-text-outline  label / icon on outline variant
+*/
+
+/* ── Base ──────────────────────────────────────────────────── */
+.tag {
+  display:        inline-flex;
+  align-items:    center;
+  border-radius:  var(--radius-xsmall);   /* 4 px */
+  white-space:    nowrap;
+  position:       relative;
+  box-sizing:     border-box;
+  font-family:    var(--platform-font-default);
+}
+
+/* ── Sizes ─────────────────────────────────────────────────── */
+.large {
+  gap:            var(--space-xsmall);                        /* 4 px */
+  padding:        var(--space-small) var(--space-medium);     /* 8 px 12 px */
+  font-size:      var(--text-size-4);                         /* 14 px */
+  font-weight:    700;
+  line-height:    var(--line-height-2);                       /* 16 px */
+  letter-spacing: var(--letter-space-default);                /* 0 px */
+}
+
+.small {
+  gap:            var(--space-xxsmall);                        /* 2 px */
+  padding:        var(--space-xsmall) var(--space-small);     /* 4 px 8 px */
+  font-size:      var(--text-size-1);                          /* 11 px */
+  font-weight:    600;
+  line-height:    var(--line-height-1);                        /* 13 px */
+  letter-spacing: var(--letter-space-default);                 /* 0 px */
+}
+
+/* ── Variants ──────────────────────────────────────────────── */
+.solid {
+  background-color: var(--tag-bg-solid);
+  color:            var(--tag-text-solid);
+}
+
+.subtle {
+  background-color: var(--tag-bg-subtle);
+  color:            var(--tag-text-subtle);
+}
+
+.outline {
+  background-color: transparent;
+  box-shadow:       inset 0 0 0 var(--border-width-thin) var(--tag-border);
+  color:            var(--tag-text-outline);
+}
+
+/* ── Icon slot ─────────────────────────────────────────────── */
+.iconSlot {
+  display:     flex;
+  align-items: center;
+  flex-shrink: 0;
+  width:       var(--icon-size-small);   /* 16 px */
+  height:      var(--icon-size-small);   /* 16 px */
+}
+
+.iconSlot svg {
+  display: block;
+  width:   100%;
+  height:  100%;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   COLOUR SLOTS — each class wires --tag-* props to repo tokens
+   ══════════════════════════════════════════════════════════════ */
+
+/* 1 · Primary */
+.primary {
+  --tag-bg-solid:     var(--background-primary);
+  --tag-bg-subtle:    var(--background-primary-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-primary);
+  --tag-border:       var(--border-primary);
+  --tag-text-outline: var(--text-primary);
+}
+
+/* 2 · Secondary */
+.secondary {
+  --tag-bg-solid:     var(--background-secondary);
+  --tag-bg-subtle:    var(--background-secondary-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-secondary);
+  --tag-border:       var(--border-secondary);
+  --tag-text-outline: var(--text-secondary);
+}
+
+/* 3 · Neutral */
+.neutral {
+  --tag-bg-solid:     var(--background-neutral);
+  --tag-bg-subtle:    var(--background-neutral-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-neutral);
+  --tag-border:       var(--border-neutral);
+  --tag-text-outline: var(--text-neutral);
+}
+
+/* 4 · Alert (Amber / Gold) */
+.alert {
+  --tag-bg-solid:     var(--background-alert-bold);
+  --tag-bg-subtle:    var(--background-alert-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-alert-bold);
+  --tag-border:       var(--border-alert-bold);
+  --tag-text-outline: var(--text-alert);
+}
+
+/* 5 · Error (Red) */
+.error {
+  --tag-bg-solid:     var(--background-error);
+  --tag-bg-subtle:    var(--background-error-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-error);
+  --tag-border:       var(--border-error);
+  --tag-text-outline: var(--text-error);
+}
+
+/* 6 · Success (Global Green) */
+.success {
+  --tag-bg-solid:     var(--background-success);
+  --tag-bg-subtle:    var(--background-success-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-success-bold);
+  --tag-border:       var(--border-success);
+  --tag-text-outline: var(--text-success);
+}
+
+/* 7 · Info (Blue) */
+.info {
+  --tag-bg-solid:     var(--background-info);
+  --tag-bg-subtle:    var(--background-info-subtle);
+  --tag-text-solid:   var(--color-base-white);
+  --tag-text-subtle:  var(--text-info-bold);
+  --tag-border:       var(--border-info);
+  --tag-text-outline: var(--text-info);
+}

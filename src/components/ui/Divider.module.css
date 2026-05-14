@@ -1,0 +1,97 @@
+/* ============================================================
+   Divider — Component
+   All values reference semantic tokens directly (no --cds-* prefix).
+
+   Orientation: horizontal (default) | vertical
+   Weight:      hairline | thin (default) | thick
+   Spacing:     none | small | medium (default) | large
+   Emphasis:    low | default | high
+
+   No hardcoded colours or type ramps.
+   ============================================================ */
+
+/* ── Root — horizontal ────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Spacing — horizontal (top + bottom margin) ───────────── */
+.spacingNone   { margin-top: 0;                    margin-bottom: 0;                    }
+.spacingSmall  { margin-top: var(--space-small);   margin-bottom: var(--space-small);   }
+.spacingMedium { margin-top: var(--space-large);   margin-bottom: var(--space-large);   }
+.spacingLarge  { margin-top: var(--space-xlarge);  margin-bottom: var(--space-xlarge);  }
+
+/* ── Line — flex child that stretches to fill available space ─ */
+.line {
+  flex: 1;
+  border: none;
+  border-top-style: solid;
+  border-top-color: var(--border-neutral);
+}
+
+/* Weight */
+.hairline .line { border-top-width: var(--border-width-hairline); }
+.thin     .line { border-top-width: var(--border-width-thin);     }
+.thick    .line { border-top-width: var(--border-width-thick);    }
+
+/* ── Emphasis — overrides the default border-neutral colour ── */
+.emphasisLow  .line { border-color: var(--border-neutral-subtle); }
+.emphasisHigh .line { border-color: var(--border-neutral-bold);   }
+
+/* ── Label — centred text between two line segments ──────── */
+.label {
+  flex-shrink: 0;
+  padding: 0 var(--space-medium);
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-2);     /* 12 px */
+  font-weight:  600;
+  line-height:  var(--line-height-2);   /* 16 px */
+  color: var(--text-neutral);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+/* ── Vertical orientation ─────────────────────────────────── */
+.vertical {
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+  margin: 0;
+  align-self: stretch;
+}
+
+/* Spacing — vertical (left + right margin) */
+.vertical.spacingNone   { margin-left: 0;                   margin-right: 0;                   }
+.vertical.spacingSmall  { margin-left: var(--space-small);  margin-right: var(--space-small);  }
+.vertical.spacingMedium { margin-left: var(--space-large);  margin-right: var(--space-large);  }
+.vertical.spacingLarge  { margin-left: var(--space-xlarge); margin-right: var(--space-xlarge); }
+
+/* Vertical line — switch from border-top to border-left */
+.vertical .line {
+  flex: 1;
+  border-top: none;
+  border-left-style: solid;
+  border-left-color: var(--border-neutral);
+  width: 0;
+}
+
+.vertical.hairline .line { border-left-width: var(--border-width-hairline); }
+.vertical.thin     .line { border-left-width: var(--border-width-thin);     }
+.vertical.thick    .line { border-left-width: var(--border-width-thick);    }
+
+/* Vertical emphasis */
+.vertical.emphasisLow  .line { border-color: var(--border-neutral-subtle); }
+.vertical.emphasisHigh .line { border-color: var(--border-neutral-bold);   }
+
+/* Vertical label — rotate 90° */
+.vertical .label {
+  padding: var(--space-medium) 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}

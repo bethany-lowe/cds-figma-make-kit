@@ -1,0 +1,124 @@
+/*
+  AreaInputField — Component
+  ─────────────────────────────────────────────────────────────
+  Same token set as SingleInputField.
+  Key difference: textarea with 80px min-height, resize: vertical.
+*/
+
+/* ── Field wrapper ───────────────────────────────────────── */
+.root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-small);
+  width:          100%;
+}
+
+/* ── Label row ───────────────────────────────────────────── */
+.labelRow {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-xsmall);
+}
+
+.label {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-4);    /* 14 px */
+  font-weight:  500;
+  line-height:  var(--line-height-4); /* 20 px */
+  color:        var(--text-neutral-bolder);
+}
+
+.required {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-4);
+  font-weight:  400;
+  color:        var(--text-neutral-subtle);
+}
+
+.counter {
+  margin-left:  auto;
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-2);   /* 12 px */
+  font-weight:  400;
+  color:        var(--text-neutral-subtle);
+  transition:   color 140ms ease;
+}
+
+.counter.atLimit {
+  color: var(--text-error);
+}
+
+/* ── Textarea container ─────────────────────────────────── */
+.container {
+  position:        relative;
+  display:         flex;
+  align-items:     stretch;
+  min-height:      80px;
+  padding:         var(--space-large);
+  border-radius:   var(--radius-large);
+  border:          var(--border-width-thin) solid var(--border-neutral);
+  background:      var(--background-app);
+  transition:      border-color 150ms ease, border-width 150ms ease, background 150ms ease;
+  box-sizing:      border-box;
+}
+
+.container:focus-within:not(.disabled):not(.readOnly) {
+  border-width:  var(--border-width-thick);
+  border-color:  var(--border-primary);
+}
+
+.container.activeState {
+  border-width:  var(--border-width-thick);
+  border-color:  var(--border-primary);
+}
+
+.container.disabled {
+  border:     none;
+  background: var(--background-disabled);
+  cursor:     not-allowed;
+}
+
+.container.readOnly {
+  background: var(--background-app);
+}
+
+/* ── Native textarea ─────────────────────────────────────── */
+.textarea {
+  flex:          1;
+  width:         100%;
+  min-height:    48px;
+  border:        none;
+  background:    transparent;
+  outline:       none;
+  resize:        vertical;
+  font-family:   var(--platform-font-default);
+  font-size:     var(--text-size-5);   /* 15 px — body large */
+  font-weight:   400;
+  line-height:   var(--line-height-4); /* 20 px */
+  color:         var(--text-neutral-bolder);
+  overflow-y:    auto;
+}
+
+.textarea::placeholder {
+  color: var(--text-neutral);
+}
+
+.textarea:disabled {
+  color:  var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.textarea[readonly] {
+  color:  var(--text-neutral-bolder);
+  cursor: default;
+  resize: none;
+}
+
+/* ── Hint text ───────────────────────────────────────────── */
+.hint {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-2);    /* 12 px */
+  font-weight:  400;
+  line-height:  var(--line-height-2);  /* 16 px */
+  color:        var(--text-neutral-subtle);
+}

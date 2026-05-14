@@ -1,0 +1,168 @@
+/*
+  SingleInputField — Component
+  ─────────────────────────────────────────────────────────────
+  Token mapping:
+    Background (enabled)      → --background-app      (white / app surface)
+    Background (disabled)     → --background-disabled
+    Border (enabled)          → 1px --border-neutral
+    Border (active/focus)     → 2px --border-primary  (--border-width-thick)
+    Border (disabled)         → none
+    Text (input value)        → --text-neutral-bolder
+    Text (disabled)           → --text-disabled
+    Placeholder               → --text-neutral
+    Label                     → --text-neutral-bolder
+    Required / Counter / Hint → --text-neutral-subtle
+    Counter at limit          → --text-error
+    Radius                    → --radius-large (16px)
+    Padding H                 → --space-large  (16px)
+    Gap label→input           → --space-small  (8px)
+    Clear icon                → actionClose/Line via currentColor
+    Focus ring                → --border-info
+*/
+
+/* ── Field wrapper ───────────────────────────────────────── */
+.root {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--space-small);
+  width:          100%;
+}
+
+/* ── Label row ───────────────────────────────────────────── */
+.labelRow {
+  display:     flex;
+  align-items: center;
+  gap:         var(--space-xsmall);
+}
+
+.label {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-4);    /* 14 px */
+  font-weight:  500;
+  line-height:  var(--line-height-4); /* 20 px */
+  color:        var(--text-neutral-bolder);
+}
+
+.required {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-4);
+  font-weight:  400;
+  color:        var(--text-neutral-subtle);
+}
+
+.counter {
+  margin-left:  auto;
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-2);   /* 12 px */
+  font-weight:  400;
+  color:        var(--text-neutral-subtle);
+  transition:   color 140ms ease;
+}
+
+.counter.atLimit {
+  color: var(--text-error);
+}
+
+/* ── Input container ─────────────────────────────────────── */
+.container {
+  position:        relative;
+  display:         flex;
+  align-items:     center;
+  height:          64px;
+  padding:         0 var(--space-large);
+  border-radius:   var(--radius-large);
+  border:          var(--border-width-thin) solid var(--border-neutral);
+  background:      var(--background-app);
+  transition:      border-color 150ms ease, border-width 150ms ease, background 150ms ease;
+  box-sizing:      border-box;
+}
+
+/* enabled + focused → 2px primary border */
+.container:focus-within:not(.disabled):not(.readOnly) {
+  border-width:  var(--border-width-thick);
+  border-color:  var(--border-primary);
+}
+
+/* pre-forced active state for demo purposes */
+.container.activeState {
+  border-width:  var(--border-width-thick);
+  border-color:  var(--border-primary);
+}
+
+/* disabled */
+.container.disabled {
+  border:     none;
+  background: var(--background-disabled);
+  cursor:     not-allowed;
+}
+
+/* read-only */
+.container.readOnly {
+  background: var(--background-app);
+}
+
+/* ── Native input ─────────────────────────────────────────── */
+.input {
+  flex:          1;
+  height:        100%;
+  border:        none;
+  background:    transparent;
+  outline:       none;
+  font-family:   var(--platform-font-default);
+  font-size:     var(--text-size-5);   /* 15 px — body large */
+  font-weight:   400;
+  line-height:   var(--line-height-4); /* 20 px */
+  color:         var(--text-neutral-bolder);
+  min-width:     0;
+}
+
+.input::placeholder {
+  color: var(--text-neutral);
+}
+
+.input:disabled {
+  color:  var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.input[readonly] {
+  color:  var(--text-neutral-bolder);
+  cursor: default;
+}
+
+/* Focus ring for keyboard navigation (on container) */
+.container:focus-within:not(.disabled):not(.readOnly) {
+  outline:        none; /* Handled by border change above */
+}
+
+/* ── Clear button ─────────────────────────────────────────── */
+.clearBtn {
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  flex-shrink:     0;
+  width:           24px;
+  height:          24px;
+  border:          none;
+  background:      transparent;
+  cursor:          pointer;
+  color:           var(--text-neutral);
+  padding:         0;
+  border-radius:   var(--radius-xsmall);
+  transition:      color 140ms ease, background 140ms ease;
+  margin-left:     var(--space-xsmall);
+}
+
+.clearBtn:hover {
+  color:      var(--text-neutral-bolder);
+  background: var(--background-neutral-subtle);
+}
+
+/* ── Hint text ───────────────────────────────────────────── */
+.hint {
+  font-family:  var(--platform-font-default);
+  font-size:    var(--text-size-2);    /* 12 px */
+  font-weight:  400;
+  line-height:  var(--line-height-2);  /* 16 px */
+  color:        var(--text-neutral-subtle);
+}

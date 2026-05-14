@@ -1,0 +1,257 @@
+/* ============================================================
+   Button — CDS Component
+   Source of truth: ✅ Button [READY] — Figma node 15:2502
+
+   All values reference repo CSS custom properties directly:
+     --space-*           spacing primitives   (base.css)
+     --border-width-*    border widths        (base.css)
+     --radius-full       border radius        (base.css)
+     --size-*            size scale           (base.css)
+     --opacity-*         opacity scale        (base.css)
+     --text-size-*       font sizes           (base.css)
+     --line-height-*     line heights         (base.css)
+     --letter-space-*    letter spacing       (base.css)
+     --icon-size-*       icon sizes           (base.css)
+     --platform-font-default  web font        (base.css)
+     --background-*      semantic bg colours  (brand-*.css)
+     --text-*            semantic text colour (brand-*.css)
+     --border-*          semantic borders     (brand-*.css)
+     --icon-*            semantic icon colour (brand-*.css)
+
+   Sizes:     small (48px) | medium (56px)
+   Emphasis:  high | mediumOutline | mediumBorderlessPrimary | mediumBorderlessNeutral | lowGhost
+   States:    default, hover (= mobile "pressed"), active, disabled, loading
+   Focus:     --border-info (blue) — matches Figma focus ring spec
+
+   No hardcoded colours, sizes, or type ramps.
+   ============================================================ */
+
+/* ── Base ─────────────────────────────────────────────────── */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-small);                      /* 8px between icon and label */
+  border: var(--border-width-thick) solid transparent;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+
+  /* Typography — component/button tokens
+     Figma spec: size=15px, lh=20px, ls=-0.6px, weight=510 (medium) */
+  font-family: var(--platform-font-default);
+  font-size: var(--text-size-5);                /* 15px */
+  font-weight: 500;                             /* medium — closest to Figma 510 */
+  line-height: var(--line-height-4);            /* 20px */
+  letter-spacing: var(--letter-space-dense);    /* -0.6px */
+
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 150ms ease, border-color 150ms ease,
+    color 150ms ease, opacity 150ms ease;
+}
+
+/* Focus — Figma spec uses border.info (blue) not border.primary */
+.button:focus-visible {
+  outline: var(--border-width-thick) solid var(--border-info);
+  outline-offset: 2px;
+}
+
+/* ── Sizes ────────────────────────────────────────────────── */
+
+/* small: py=12px, px=24px → min-height 48px */
+.small {
+  height: var(--size-8);                         /* 48px — fixed, never grows */
+  padding-left: var(--space-xlarge);             /* 24px */
+  padding-right: var(--space-xlarge);
+}
+
+/* medium: py=16px, px=24px → min-height 56px */
+.medium {
+  height: var(--size-9);                         /* 56px — fixed, never grows */
+  padding-left: var(--space-xlarge);             /* 24px */
+  padding-right: var(--space-xlarge);
+}
+
+/* ── Full-width ──────────────────────────────────────────── */
+.fullWidth {
+  width: 100%;
+}
+
+/* ── Icon-adjacent padding compensation ──────────────────── */
+/* When an icon is present, the icon (24px) + gap (8px) adds visual weight
+   to that side. Reducing the padding on the icon side restores optical balance.
+   24px → 16px (--space-large) on the icon side. */
+.hasIconLeft {
+  padding-left: var(--space-large);   /* 16px — compensates for icon + gap */
+}
+
+.hasIconRight {
+  padding-right: var(--space-large);  /* 16px — compensates for icon + gap */
+}
+
+/* Combined selectors (specificity 0-2-0) restore the correct 16px on the icon side. */
+.mediumBorderlessPrimary.hasIconLeft,
+.mediumBorderlessNeutral.hasIconLeft,
+.lowGhost.hasIconLeft {
+  padding-left: var(--space-large);
+}
+
+.mediumBorderlessPrimary.hasIconRight,
+.mediumBorderlessNeutral.hasIconRight,
+.lowGhost.hasIconRight {
+  padding-right: var(--space-large);
+}
+
+/* ── Icon-only ───────────────────────────────────────────── */
+.iconOnly.small {
+  width: var(--size-8);    /* 48px */
+  height: var(--size-8);
+  min-height: unset;
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.iconOnly.medium {
+  width: var(--size-9);    /* 56px */
+  height: var(--size-9);
+  min-height: unset;
+  padding: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ── Variants — High (filled) ────────────────────────────── */
+.high {
+  background-color: var(--background-primary);
+  color: var(--text-primary-inverse);
+  border-color: transparent;
+}
+
+.high:hover:not(.disabled) {
+  background-color: var(--background-primary-bold);
+}
+
+.high:active:not(.disabled) {
+  opacity: var(--opacity-medium);   /* 0.6 — Figma pressed state */
+}
+
+/* ── Variants — Medium Outline ───────────────────────────── */
+.mediumOutline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+.mediumOutline:hover:not(.disabled) {
+  background-color: var(--background-primary-subtle);
+}
+
+.mediumOutline:active:not(.disabled) {
+  background-color: var(--background-primary-subtle);
+  opacity: var(--opacity-medium);
+}
+
+/* ── Variants — Primary Borderless ────────────────────────── */
+.mediumBorderlessPrimary {
+  background-color: var(--background-primary-subtle);
+  color: var(--text-primary);
+  border-color: transparent;
+  padding-left: var(--space-xlarge);
+  padding-right: var(--space-xlarge);
+}
+
+.mediumBorderlessPrimary:hover:not(.disabled) {
+  background-color: var(--background-primary-subtle);
+}
+
+.mediumBorderlessPrimary:active:not(.disabled) {
+  background-color: var(--background-primary-subtle);
+  opacity: var(--opacity-medium);
+}
+
+/* ── Variants — Neutral Borderless ────────────────────────── */
+.mediumBorderlessNeutral {
+  background-color: var(--background-neutral-subtle);
+  color: var(--text-primary);
+  border-color: transparent;
+  padding-left: var(--space-xlarge);
+  padding-right: var(--space-xlarge);
+}
+
+.mediumBorderlessNeutral .iconSlot {
+  color: var(--icon-primary);
+}
+
+.mediumBorderlessNeutral:hover:not(.disabled) {
+  background-color: var(--background-neutral-subtle);
+}
+
+.mediumBorderlessNeutral:active:not(.disabled) {
+  background-color: var(--background-neutral-subtle);
+  opacity: var(--opacity-medium);
+}
+
+/* ── Variants — Low Ghost ────────────────────────────────── */
+.lowGhost {
+  background-color: transparent;
+  color: var(--text-neutral);
+  border-color: transparent;
+  padding-left: var(--space-xlarge);
+  padding-right: var(--space-xlarge);
+}
+
+.lowGhost:hover:not(.disabled) {
+  background-color: var(--background-neutral-subtle);
+}
+
+.lowGhost:active:not(.disabled) {
+  background-color: var(--background-neutral-subtle);
+  opacity: var(--opacity-medium);
+}
+
+/* ── Disabled ────────────────────────────────────────────── */
+.disabled {
+  background-color: var(--background-disabled);
+  color: var(--text-neutral-subtle);
+  border-color: transparent;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Loading ─────────────────────────────────────────────── */
+.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: cds-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cds-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Icon slots ──────────────────────────────────────────── */
+.iconSlot {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--icon-size-medium);   /* 24px — matches Figma icon-wrapper size */
+  height: var(--icon-size-medium);
+}
+
+.iconSlot svg {
+  width: 100%;
+  height: 100%;
+}

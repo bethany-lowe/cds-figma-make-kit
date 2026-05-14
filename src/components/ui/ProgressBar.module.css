@@ -1,0 +1,105 @@
+/* ============================================================
+   ProgressBar — Component
+   All values reference semantic tokens directly (no --cds-* prefix).
+
+   Sizes:      small (4px) | medium (8px) | large (12px)
+   Sentiments: primary | success | warning | error | neutral
+   States:     determinate (value 0–100) | indeterminate (animated)
+
+   No hardcoded colours, sizes, or type ramps.
+   ============================================================ */
+
+/* ── Root ─────────────────────────────────────────────────── */
+.progressBar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xsmall);
+  width: 100%;
+  font-family: var(--platform-font-default);
+}
+
+/* ── Header row (label + value) ───────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-small);
+}
+
+.label {
+  font-size:   var(--text-size-3);    /* 13 px */
+  font-weight: 400;
+  line-height: var(--line-height-3);
+  color: var(--text-neutral-bolder);
+  margin: 0;
+}
+
+.value {
+  font-size:   var(--text-size-3);    /* 13 px */
+  font-weight: 700;
+  line-height: var(--line-height-3);
+  color: var(--text-neutral);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Track ────────────────────────────────────────────────── */
+.track {
+  width: 100%;
+  background: var(--background-disabled);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Sizes ────────────────────────────────────────────────── */
+.small  .track { height: 4px;  }
+.medium .track { height: 8px;  }
+.large  .track { height: 12px; }
+
+/* ── Fill ─────────────────────────────────────────────────── */
+.fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 0;
+}
+
+/* ── Sentiments — fill colour ─────────────────────────────── */
+.primary .fill  { background: var(--background-primary);  }
+.success .fill  { background: var(--background-success);  }
+.warning .fill  { background: var(--background-alert);    }
+.error   .fill  { background: var(--background-error);    }
+.neutral .fill  { background: var(--background-neutral);  }
+
+/* ── Sentiments — value text colour ──────────────────────── */
+.primary .value { color: var(--text-primary);  }
+.success .value { color: var(--text-success);  }
+.warning .value { color: var(--text-alert);    }
+.error   .value { color: var(--text-error);    }
+.neutral .value { color: var(--text-neutral);  }
+
+/* ── Indeterminate animation ──────────────────────────────── */
+.indeterminate .fill {
+  width: 40% !important;
+  animation: progress-slide 1.4s ease-in-out infinite;
+  border-radius: var(--radius-full);
+}
+
+@keyframes progress-slide {
+  0%   { transform: translateX(-100%); }
+  60%  { transform: translateX(260%);  }
+  100% { transform: translateX(260%);  }
+}
+
+/* ── Helper text ──────────────────────────────────────────── */
+.helper {
+  font-size:   var(--text-size-2);    /* 12 px */
+  font-weight: 400;
+  line-height: var(--line-height-2);
+  color: var(--text-neutral);
+  margin: 0;
+}
+
+.error   .helper { color: var(--text-error);   }
+.success .helper { color: var(--text-success); }
