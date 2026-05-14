@@ -1,0 +1,18 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* ── CDS repo token files (bethany-lowe/cds-design-system-tokens) ────────────
+   Loaded statically — no runtime fetch required.
+   • base.css          – brand/platform-agnostic primitives
+   • brand-telus.css   – TELUS aliases + semantics  (active when data-brand="telus")
+   • brand-homi.css    – Homi  aliases + semantics  (active when data-brand="homi")
+   • platform-web.css  – web platform overrides
+   • components.css    – component-level tokens
+   ThemeContext sets data-brand on <html>, so brand switching is automatic.
+   ──────────────────────────────────────────────────────────────────────────── */
+@import '../imports/base.css';
+@import '../imports/brand-telus.css';
+@import '../imports/brand-homi.css';
+@import '../imports/platform-web.css';
+@import '../imports/components.css';
