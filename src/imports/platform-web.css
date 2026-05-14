@@ -1,0 +1,42 @@
+/* ==================== PLATFORM: Web ====================
+   platform-web.css — font stack and component tokens for Web.
+   Load alongside base.css and a brand-*.css file. */
+
+/* Platform font stack */
+:root[data-platform="web"] {
+  --platform-font-default: "Noto Sans", system-ui, sans-serif;
+  --platform-font-label:   "Noto Sans";
+}
+
+/* Toggle component tokens */
+:root[data-platform="web"],
+[data-platform-scope="web"] {
+  /* Web toggle — reuse the iOS style by default (platform.text.default renders on desktop) */
+  --toggle-knob-bg-enabled-on:   var(--color-global-grey-50);
+  --toggle-knob-bg-enabled-off:  var(--color-global-grey-50);
+  --toggle-knob-bg-disabled-on:  var(--color-global-grey-50);
+  --toggle-knob-bg-disabled-off: var(--color-global-grey-50);
+
+  --toggle-track-bg-enabled-on:   var(--background-primary-bold);
+  --toggle-track-bg-enabled-off:  var(--color-neutral-dark);
+  --toggle-track-bg-disabled-on:  var(--background-disabled-bold);
+  --toggle-track-bg-disabled-off: var(--background-disabled-bold);
+
+  --toggle-track-border-enabled-on:   var(--background-primary-subtle);
+  --toggle-track-border-enabled-off:  var(--background-neutral-subtle);
+  --toggle-track-border-disabled-on:  var(--background-disabled-bold);
+  --toggle-track-border-disabled-off: var(--background-disabled-bold);
+
+  --toggle-track-width: 51px;
+  --toggle-track-height: 31px;
+  --toggle-track-radius: var(--radius-full);
+  --toggle-knob-size-on:  27px;
+  --toggle-knob-size-off: 27px;
+  --toggle-track-border-width: var(--border-width-thick);
+  --toggle-track-padding: 2px;
+}
+
+:root {
+  --toggle-focus-color: var(--border-info, var(--color-info-pure));
+  --toggle-focus-width: var(--border-width-heavy);
+}

@@ -1,0 +1,218 @@
+{
+  "color": {
+    "primary": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.homi.color.teal.300}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.homi.color.teal.500}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.homi.color.teal.700}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.homi.color.teal.800}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.homi.color.teal.900}"
+      }
+    },
+    "secondary": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.homi.color.blue.100}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.homi.color.blue.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.homi.color.blue.600}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.homi.color.blue.800}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.homi.color.blue.900}"
+      }
+    },
+    "tertiary": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.homi.color.yellow.100}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.homi.color.yellow.300}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.homi.color.yellow.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.homi.color.yellow.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.homi.color.yellow.900}"
+      }
+    },
+    "neutral": {
+      "lightest": {
+        "$type": "color",
+        "$value": "{global.color.grey.50}"
+      },
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.grey.100}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.grey.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.grey.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.grey.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.grey.800}"
+      },
+      "darkest": {
+        "$type": "color",
+        "$value": "{global.color.grey.900}"
+      }
+    },
+    "info": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.blue.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.blue.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.blue.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.blue.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.blue.800}"
+      }
+    },
+    "success": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.green.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.green.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.green.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.green.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.green.800}"
+      }
+    },
+    "alert": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.amber.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.amber.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.amber.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.amber.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.amber.800}"
+      }
+    },
+    "error": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.red.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.red.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.red.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.red.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.red.800}"
+      }
+    }
+  },
+  "text": {
+    "primary": {
+      "$type": "fontFamily",
+      "$value": "{brand.homi.font.serif}"
+    },
+    "font": {
+      "weight": {
+        "light": {
+          "$type": "fontWeight",
+          "$value": "Light"
+        },
+        "regular": {
+          "$type": "fontWeight",
+          "$value": "Regular"
+        },
+        "medium": {
+          "$type": "fontWeight",
+          "$value": "SemiBold"
+        },
+        "semibold": {
+          "$type": "fontWeight",
+          "$value": "SemiBold"
+        },
+        "bold": {
+          "$type": "fontWeight",
+          "$value": "Bold"
+        }
+      }
+    }
+  }
+}

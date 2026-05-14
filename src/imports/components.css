@@ -1,0 +1,16 @@
+/* ==================== COMPONENT TOKENS ====================
+   components.css — brand- and platform-agnostic component tokens.
+   Always load alongside base.css. */
+
+/* ==================== CHECKBOX COMPONENT TOKENS ==================== */
+:root {
+  --checkbox-background-disabled-selected: var(--color-primary-light);
+  --radio-background-disabled-selected: var(--color-primary-light);
+}
+/* ==================== END CHECKBOX COMPONENT TOKENS ==================== */
+
+/* ==================== SLIDER COMPONENT TOKENS ==================== */
+:root {
+  --slider-background-disabled: var(--color-primary-light);
+}
+/* ==================== END SLIDER COMPONENT TOKENS ==================== */

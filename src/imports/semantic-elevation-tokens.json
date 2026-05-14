@@ -1,0 +1,60 @@
+{
+  "elevation": {
+    "level0": {
+      "$value": {
+        "color": "#00000000",
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 0, "unit": "px" },
+        "blur":    { "value": 0, "unit": "px" },
+        "spread":  { "value": 0, "unit": "px" }
+      },
+      "$type": "shadow",
+      "$description": "No shadow. Explicit zero-shadow state for elements with no layering requirement."
+    },
+    "level1": {
+      "$value": {
+        "color": "#0000000F",
+        "offsetX": { "value": 0,  "unit": "px" },
+        "offsetY": { "value": 4,  "unit": "px" },
+        "blur":    { "value": 10, "unit": "px" },
+        "spread":  { "value": 0,  "unit": "px" }
+      },
+      "$type": "shadow",
+      "$description": "Interactive components that reinforce presence or hierarchy. Examples: device tiles, feature cards, navigation elements."
+    },
+    "level2": {
+      "$value": {
+        "color": "#00000014",
+        "offsetX": { "value": 0,  "unit": "px" },
+        "offsetY": { "value": 6,  "unit": "px" },
+        "blur":    { "value": 16, "unit": "px" },
+        "spread":  { "value": 0,  "unit": "px" }
+      },
+      "$type": "shadow",
+      "$description": "Layout-based elements, overlapping elements, and scrolled states. Examples: bottom sheets, tab bar, scrolled elements."
+    },
+    "level3": {
+      "$value": {
+        "color": "#00000029",
+        "offsetX": { "value": 0,  "unit": "px" },
+        "offsetY": { "value": 6,  "unit": "px" },
+        "blur":    { "value": 16, "unit": "px" },
+        "spread":  { "value": 0,  "unit": "px" }
+      },
+      "$type": "shadow",
+      "$description": "Tooltips and high-level notifications. Examples: tooltips, snackbar, high-priority notifications."
+    },
+    "level4": {
+      "$value": {
+        "color": "#00000000",
+        "offsetX": { "value": 0, "unit": "px" },
+        "offsetY": { "value": 0, "unit": "px" },
+        "blur":    { "value": 0, "unit": "px" },
+        "spread":  { "value": 0, "unit": "px" }
+      },
+      "$type": "shadow",
+      "$deprecated": "Deprecated - do not use.",
+      "$description": "Deprecated elevation level. Do not use."
+    }
+  }
+}

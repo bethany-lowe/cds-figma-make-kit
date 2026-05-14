@@ -1,0 +1,572 @@
+{
+  "background": {
+    "primary": {
+      "$type": "color",
+      "$value": "{color.primary.pure}"
+    },
+    "primarySubtle": {
+      "$type": "color",
+      "$value": "{color.primary.lighter}"
+    },
+    "primaryBold": {
+      "$type": "color",
+      "$value": "{color.primary.dark}"
+    },
+    "primaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{color.secondary.pure}"
+    },
+    "secondarySubtle": {
+      "$type": "color",
+      "$value": "{color.secondary.lighter}"
+    },
+    "secondaryBold": {
+      "$type": "color",
+      "$value": "{color.secondary.dark}"
+    },
+    "secondaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{color.tertiary.pure}"
+    },
+    "tertiarySubtle": {
+      "$type": "color",
+      "$value": "{color.tertiary.light}"
+    },
+    "tertiaryBold": {
+      "$type": "color",
+      "$value": "{color.tertiary.dark}"
+    },
+    "tertiaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{color.neutral.pure}"
+    },
+    "neutralSubtle": {
+      "$type": "color",
+      "$value": "{color.neutral.lighter}"
+    },
+    "neutralBold": {
+      "$type": "color",
+      "$value": "{color.neutral.darker}"
+    },
+    "neutralInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "app": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "appNeutral": {
+      "$type": "color",
+      "$value": "{color.neutral.lighter}"
+    },
+    "modal": {
+      "$type": "color",
+      "$value": "{color.neutral.lighter}"
+    },
+    "disabled": {
+      "$type": "color",
+      "$value": "{color.neutral.lighter}"
+    },
+    "disabledBold": {
+      "$type": "color",
+      "$value": "{color.neutral.light}"
+    },
+    "disabledSubtle": {
+      "$type": "color",
+      "$value": "{color.neutral.lightest}"
+    },
+    "video": {
+      "$type": "color",
+      "$value": "{base.black}"
+    },
+    "overlay": {
+      "$type": "color",
+      "$value": "#00000099"
+    },
+    "tabbar": {
+      "$type": "color",
+      "$value": "{color.neutral.lighter}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{color.success.pure}"
+    },
+    "successSubtle": {
+      "$type": "color",
+      "$value": "{color.success.lighter}"
+    },
+    "successBold": {
+      "$type": "color",
+      "$value": "{color.success.dark}"
+    },
+    "successInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "alert": {
+      "$type": "color",
+      "$value": "{color.alert.light}"
+    },
+    "alertSubtle": {
+      "$type": "color",
+      "$value": "{color.alert.lighter}"
+    },
+    "alertBold": {
+      "$type": "color",
+      "$value": "{color.alert.pure}"
+    },
+    "alertInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "{color.error.pure}"
+    },
+    "errorSubtle": {
+      "$type": "color",
+      "$value": "{color.error.lighter}"
+    },
+    "errorBold": {
+      "$type": "color",
+      "$value": "{color.error.dark}"
+    },
+    "errorInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.info.pure}"
+    },
+    "infoSubtle": {
+      "$type": "color",
+      "$value": "{color.info.lighter}"
+    },
+    "infoBold": {
+      "$type": "color",
+      "$value": "{color.info.dark}"
+    },
+    "infoInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    }
+  },
+  "text": {
+    "primary": {
+      "$type": "color",
+      "$value": "{color.primary.pure}"
+    },
+    "primaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "primarySubtle": {
+      "$type": "color",
+      "$value": "{color.primary.light}"
+    },
+    "primaryBold": {
+      "$type": "color",
+      "$value": "{color.primary.dark}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{color.secondary.pure}"
+    },
+    "secondaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "secondarySubtle": {
+      "$type": "color",
+      "$value": "{color.secondary.light}"
+    },
+    "secondaryBold": {
+      "$type": "color",
+      "$value": "{color.secondary.dark}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{color.tertiary.pure}"
+    },
+    "tertiaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "tertiarySubtle": {
+      "$type": "color",
+      "$value": "{color.tertiary.light}"
+    },
+    "tertiaryBold": {
+      "$type": "color",
+      "$value": "{color.tertiary.dark}"
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{color.neutral.dark}"
+    },
+    "neutralInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "neutralSubtle": {
+      "$type": "color",
+      "$value": "{color.neutral.pure}"
+    },
+    "neutralBold": {
+      "$type": "color",
+      "$value": "{color.neutral.darker}"
+    },
+    "neutralBolder": {
+      "$type": "color",
+      "$value": "{base.black}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{color.success.pure}"
+    },
+    "successInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "successSubtle": {
+      "$type": "color",
+      "$value": "{color.success.light}"
+    },
+    "successBold": {
+      "$type": "color",
+      "$value": "{color.success.dark}"
+    },
+    "alert": {
+      "$type": "color",
+      "$value": "{color.alert.pure}"
+    },
+    "alertInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "alertSubtle": {
+      "$type": "color",
+      "$value": "{color.alert.light}"
+    },
+    "alertBold": {
+      "$type": "color",
+      "$value": "{color.alert.dark}"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "{color.error.pure}"
+    },
+    "errorInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "errorSubtle": {
+      "$type": "color",
+      "$value": "{color.error.light}"
+    },
+    "errorBold": {
+      "$type": "color",
+      "$value": "{color.error.dark}"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.info.pure}"
+    },
+    "infoInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "infoSubtle": {
+      "$type": "color",
+      "$value": "{color.info.light}"
+    },
+    "infoBold": {
+      "$type": "color",
+      "$value": "{color.info.dark}"
+    }
+  },
+  "border": {
+    "primary": {
+      "$type": "color",
+      "$value": "{color.primary.light}"
+    },
+    "primarySubtle": {
+      "$type": "color",
+      "$value": "{color.primary.lighter}"
+    },
+    "primaryBold": {
+      "$type": "color",
+      "$value": "{color.primary.dark}"
+    },
+    "primaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{color.secondary.pure}"
+    },
+    "secondarySubtle": {
+      "$type": "color",
+      "$value": "{color.secondary.lighter}"
+    },
+    "secondaryBold": {
+      "$type": "color",
+      "$value": "{color.secondary.dark}"
+    },
+    "secondaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{color.tertiary.pure}"
+    },
+    "tertiarySubtle": {
+      "$type": "color",
+      "$value": "{color.tertiary.light}"
+    },
+    "tertiaryBold": {
+      "$type": "color",
+      "$value": "{color.tertiary.dark}"
+    },
+    "tertiaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{color.neutral.light}"
+    },
+    "neutralSubtle": {
+      "$type": "color",
+      "$value": "{color.neutral.lighter}"
+    },
+    "neutralBold": {
+      "$type": "color",
+      "$value": "{color.neutral.dark}"
+    },
+    "neutralInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{color.success.pure}"
+    },
+    "successSubtle": {
+      "$type": "color",
+      "$value": "{color.success.lighter}"
+    },
+    "successBold": {
+      "$type": "color",
+      "$value": "{color.success.dark}"
+    },
+    "successInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "alert": {
+      "$type": "color",
+      "$value": "{color.alert.light}"
+    },
+    "alertSubtle": {
+      "$type": "color",
+      "$value": "{color.alert.lighter}"
+    },
+    "alertBold": {
+      "$type": "color",
+      "$value": "{color.alert.pure}"
+    },
+    "alertInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "{color.error.pure}"
+    },
+    "errorSubtle": {
+      "$type": "color",
+      "$value": "{color.error.lighter}"
+    },
+    "errorBold": {
+      "$type": "color",
+      "$value": "{color.error.dark}"
+    },
+    "errorInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.info.pure}"
+    },
+    "infoSubtle": {
+      "$type": "color",
+      "$value": "{color.info.lighter}"
+    },
+    "infoBold": {
+      "$type": "color",
+      "$value": "{color.info.dark}"
+    },
+    "infoInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    }
+  },
+  "icon": {
+    "primary": {
+      "$type": "color",
+      "$value": "{color.primary.pure}"
+    },
+    "primaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "primarySubtle": {
+      "$type": "color",
+      "$value": "{color.primary.light}"
+    },
+    "primaryBold": {
+      "$type": "color",
+      "$value": "{color.primary.dark}"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{color.secondary.pure}"
+    },
+    "secondaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "secondarySubtle": {
+      "$type": "color",
+      "$value": "{color.secondary.light}"
+    },
+    "secondaryBold": {
+      "$type": "color",
+      "$value": "{color.secondary.dark}"
+    },
+    "tertiary": {
+      "$type": "color",
+      "$value": "{color.tertiary.pure}"
+    },
+    "tertiaryInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "tertiarySubtle": {
+      "$type": "color",
+      "$value": "{color.tertiary.light}"
+    },
+    "tertiaryBold": {
+      "$type": "color",
+      "$value": "{color.tertiary.dark}"
+    },
+    "neutral": {
+      "$type": "color",
+      "$value": "{color.neutral.dark}"
+    },
+    "neutralInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "neutralSubtle": {
+      "$type": "color",
+      "$value": "{color.neutral.pure}"
+    },
+    "neutralBold": {
+      "$type": "color",
+      "$value": "{color.neutral.darker}"
+    },
+    "success": {
+      "$type": "color",
+      "$value": "{color.success.pure}"
+    },
+    "successInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "successSubtle": {
+      "$type": "color",
+      "$value": "{color.success.light}"
+    },
+    "successBold": {
+      "$type": "color",
+      "$value": "{color.success.dark}"
+    },
+    "alert": {
+      "$type": "color",
+      "$value": "{color.alert.pure}"
+    },
+    "alertInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "alertSubtle": {
+      "$type": "color",
+      "$value": "{color.alert.light}"
+    },
+    "alertBold": {
+      "$type": "color",
+      "$value": "{color.alert.dark}"
+    },
+    "error": {
+      "$type": "color",
+      "$value": "{color.error.pure}"
+    },
+    "errorInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "errorSubtle": {
+      "$type": "color",
+      "$value": "{color.error.light}"
+    },
+    "errorBold": {
+      "$type": "color",
+      "$value": "{color.error.dark}"
+    },
+    "info": {
+      "$type": "color",
+      "$value": "{color.info.pure}"
+    },
+    "infoInverse": {
+      "$type": "color",
+      "$value": "{base.white}"
+    },
+    "infoSubtle": {
+      "$type": "color",
+      "$value": "{color.info.light}"
+    },
+    "infoBold": {
+      "$type": "color",
+      "$value": "{color.info.dark}"
+    }
+  },
+  "base": {
+    "white": {
+      "$type": "color",
+      "$value": "{global.color.grey.0}"
+    },
+    "black": {
+      "$type": "color",
+      "$value": "{global.color.grey.1000}"
+    }
+  }
+}

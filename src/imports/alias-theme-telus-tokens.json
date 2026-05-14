@@ -1,0 +1,218 @@
+{
+  "color": {
+    "primary": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.telus.color.purple.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.telus.color.purple.300}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.telus.color.purple.700}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.telus.color.purple.800}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.telus.color.purple.900}"
+      }
+    },
+    "secondary": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.100}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.600}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.800}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.900}"
+      }
+    },
+    "tertiary": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.100}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.300}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.600}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.telus.color.green.800}"
+      }
+    },
+    "neutral": {
+      "lightest": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.50}"
+      },
+      "lighter": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.100}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.800}"
+      },
+      "darkest": {
+        "$type": "color",
+        "$value": "{brand.telus.color.grey.900}"
+      }
+    },
+    "info": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.blue.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.blue.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.blue.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.blue.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.blue.800}"
+      }
+    },
+    "success": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.green.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.green.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.green.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.green.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.green.800}"
+      }
+    },
+    "alert": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.amber.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.amber.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.amber.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.amber.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.amber.800}"
+      }
+    },
+    "error": {
+      "lighter": {
+        "$type": "color",
+        "$value": "{global.color.red.50}"
+      },
+      "light": {
+        "$type": "color",
+        "$value": "{global.color.red.200}"
+      },
+      "pure": {
+        "$type": "color",
+        "$value": "{global.color.red.500}"
+      },
+      "dark": {
+        "$type": "color",
+        "$value": "{global.color.red.700}"
+      },
+      "darker": {
+        "$type": "color",
+        "$value": "{global.color.red.800}"
+      }
+    }
+  },
+  "text": {
+    "primary": {
+      "$type": "fontFamily",
+      "$value": "{brand.telus.font.sans.serif}"
+    },
+    "font": {
+      "weight": {
+        "light": {
+          "$type": "fontWeight",
+          "$value": "Regular"
+        },
+        "regular": {
+          "$type": "fontWeight",
+          "$value": "Regular"
+        },
+        "medium": {
+          "$type": "fontWeight",
+          "$value": "Md"
+        },
+        "semibold": {
+          "$type": "fontWeight",
+          "$value": "Md"
+        },
+        "bold": {
+          "$type": "fontWeight",
+          "$value": "Bold"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "brand": {
+    "telus": {
+      "color": {
+        "purple": {
+          "50": {
+            "$type": "color",
+            "$value": "#f8f0ff"
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#dfc9f3"
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#c9a4ea"
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#b287d8"
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#a069d2"
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#7c53a5"
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#613889"
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#4b286d"
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#361a4f"
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#0e001e"
+          }
+        },
+        "green": {
+          "50": {
+            "$type": "color",
+            "$value": "#f4f9f2"
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#e3f6d1"
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#bfe797"
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#66cc00"
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#39940b"
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#2a7c00"
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#2b5e00"
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#163e06"
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#0f2d00"
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#061300"
+          }
+        },
+        "grey": {
+          "50": {
+            "$type": "color",
+            "$value": "#fafafa"
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#f4f4f7"
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#d0d0d2"
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#b4b4b7"
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#9a9a9d"
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#818186"
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#6e6e73"
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#54595f"
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#414547"
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#2c2e30"
+          }
+        }
+      },
+      "font": {
+        "sans": {
+          "serif": {
+            "$type": "fontFamily",
+            "$value": "HN for TELUS"
+          }
+        }
+      }
+    }
+  }
+}
